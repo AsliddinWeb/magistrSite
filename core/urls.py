@@ -15,7 +15,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
 # Static settings
 from django.conf import settings
@@ -28,6 +28,9 @@ admin.site.index_title = "Dashboard"
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
+    # Home urls
+    path('', include('home_app.urls')),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
