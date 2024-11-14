@@ -7,7 +7,10 @@
       rel="stylesheet">
 
 <!-- fonts -->
-<link rel="shortcut icon" href="{% static 'images/favicon.png' %}">
+{% if seo_settings and seo_settings.site_favicon %}
+<link rel="icon" href="{{ seo_settings.site_favicon.url }}"/>
+{% endif %}
+
 <link rel="stylesheet" type="text/css" href="{% static 'css/unicons.css' %}">
 <link rel="stylesheet" href="{% static 'css/plugins.css' %}">
 <link rel="stylesheet" href="{% static 'css/style.css' %}">

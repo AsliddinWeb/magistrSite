@@ -4,7 +4,9 @@
     {% include 'includes/meta.html' %}
     {% include 'includes/css_links.html' %}
 
-    <title>Asliddin</title>
+    {% if seo_settings and seo_settings.site_name %}
+        <title>{{ seo_settings.site_name }}</title>
+    {% endif %}
 </head>
 
 <body>
