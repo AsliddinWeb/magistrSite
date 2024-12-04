@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="wrapper !bg-[#d16b86]]]]" id="form">
+    <div class="container pt-10 pb-36 xl:pt-[4.5rem] lg:pt-[4.5rem] md:pt-[4.5rem] xl:pb-40 lg:pb-40 md:pb-40">
+        <div class="flex flex-wrap mx-[-15px]">
+            <div class="md:w-8/12 lg:w-7/12 xl:w-6/12 xxl:w-5/12 w-full flex-[0_0_auto] px-[15px] max-w-full !mx-auto mb-12">
+                <h1 class="text-[calc(1.365rem_+_1.38vw)] font-bold leading-[1.2] xl:text-[2.4rem] !mb-3">Test
+                    savollari</h1>
+                <p class="lead leading-[1.65] text-[0.9rem] font-medium lg:!px-7 xl:!px-7 xxl:!px-6"><b>{{ name }}.</b>
+                    Hush kelibsiz!</p>
+            </div>
+            <!-- /column -->
+        </div>
+        <form method="post" class="border p-3">
+            {% csrf_token %}
+            <div>
+                {% for quiz in quizes %}
+                <div class="mb-4">
+                    <h4>{{ quiz.question }}</h4>
+                    <div class="form-check block min-h-[1.36rem] mb-0.5 pl-[1.55rem]">
+                        <input class="form-check-input" type="radio" name="question_{{ quiz.id }}"
+                               id="option_a_{{ quiz.id }}" value="A">
+                        <label class="form-check-label" for="option_a_{{ quiz.id }}">{{ quiz.option_a }}</label>
+                    </div>
+                    <div class="form-check block min-h-[1.36rem] mb-0.5 pl-[1.55rem]">
+                        <input class="form-check-input" type="radio" name="question_{{ quiz.id }}"
+                               id="option_b_{{ quiz.id }}" value="B">
+                        <label class="form-check-label" for="option_b_{{ quiz.id }}">{{ quiz.option_b }}</label>
+                    </div>
+                    <div class="form-check block min-h-[1.36rem] mb-0.5 pl-[1.55rem]">
+                        <input class="form-check-input" type="radio" name="question_{{ quiz.id }}"
+                               id="option_c_{{ quiz.id }}" value="C">
+                        <label class="form-check-label" for="option_c_{{ quiz.id }}">{{ quiz.option_c }}</label>
+                    </div>
+                    <div class="form-check block min-h-[1.36rem] mb-0.5 pl-[1.55rem]">
+                        <input class="form-check-input" type="radio" name="question_{{ quiz.id }}"
+                               id="option_d_{{ quiz.id }}" value="D">
+                        <label class="form-check-label" for="option_d_{{ quiz.id }}">{{ quiz.option_d }}</label>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+
+            <div class="mt-10">
+                <button type="submit" name="submit_answers"
+                        class="btn btn-green text-white !bg-[#45c4a0] border-[#45c4a0] hover:text-white hover:bg-[#45c4a0] hover:border-[#45c4a0] focus:shadow-[rgba(92,140,229,1)] active:text-white active:bg-[#45c4a0] active:border-[#45c4a0] disabled:text-white disabled:bg-[#45c4a0] disabled:border-[#45c4a0]  !rounded-[50rem] mb-2 !mr-[.25rem]">
+                    Yakunlash
+                </button>
+            </div>
+        </form>
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+</section>
+
+{% endblock content %}

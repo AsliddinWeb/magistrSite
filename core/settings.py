@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     'settings_app',
     'home_app',
     'news_app',
-    'start_app',
+    'course_app',
 ]
 
 MIDDLEWARE = [

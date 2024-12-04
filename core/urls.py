@@ -31,6 +31,9 @@ urlpatterns = [
 
     # Home urls
     path('', include('home_app.urls')),
+
+    # Course urls
+    path('courses/', include('course_app.urls')),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -59,46 +59,48 @@
 
 <section class="wrapper !bg-[#ffffff] ">
     <div class="container pt-10 xl:pt-14 lg:pt-14 md:pt-14">
-        <h2 class="text-[calc(1.305rem_+_0.66vw)] font-bold xl:text-[1.8rem] leading-[1.3] mb-3 !text-center">Yangiliklar</h2>
-        <p class="lead text-[1rem] mb-10 !text-center md:!px-24 lg:!px-[12.5rem] xl:!px-0">Informatikaning nazariy asoslariga oid eng so'nggi yangiliklar.</p>
+        <h2 class="text-[calc(1.305rem_+_0.66vw)] font-bold xl:text-[1.8rem] leading-[1.3] mb-3 !text-center">
+            Yangiliklar</h2>
+        <p class="lead text-[1rem] mb-10 !text-center md:!px-24 lg:!px-[12.5rem] xl:!px-0">Informatikaning nazariy
+            asoslariga oid eng so'nggi yangiliklar.</p>
         <div class="swiper-container blog grid-view !mb-6" data-margin="30" data-dots="true" data-items-xl="3"
              data-items-md="2" data-items-xs="1">
             <div class="swiper">
                 <div class="swiper-wrapper">
                     {% for article in news %}
-                        <div class="swiper-slide">
-                            <article>
-                                <figure class="overlay overlay-1 hover-scale group rounded !mb-5"><a href="#"> <img
-                                        class="!transition-all !duration-[0.35s] !ease-in-out group-hover:scale-105"
-                                        src="{{ article.image.url }}" alt="{{ article.title }}"></a>
-                                    <figcaption
-                                            class="group-hover:opacity-100 absolute w-full h-full opacity-0 text-center px-4 py-3 inset-0 z-[5] pointer-events-none p-2">
-                                        <h5 class="from-top  !mb-0 absolute w-full translate-y-[-80%] p-[.75rem_1rem] left-0 top-2/4">
-                                            Batafsil o'qish</h5>
-                                    </figcaption>
-                                </figure>
-                                <div class="post-header">
-                                    <div class="inline-flex mb-[.4rem] uppercase tracking-[0.02rem] text-[0.7rem] font-bold text-[#aab0bc] relative align-top pl-[1.4rem] before:content-[''] before:absolute before:inline-block before:translate-y-[-60%] before:w-3 before:h-[0.05rem] before:left-0 before:top-2/4 before:bg-[#3f78e0]">
-                                        <a class="hover" rel="category">{{ article.category.title }}</a>
-                                    </div>
-                                    <!-- /.post-category -->
-                                    <h2 class="post-title h3 !mt-1 !mb-3"><a class="text-[#343f52] hover:text-[#3f78e0]"
-                                                                             href="#">{{ article.title }}</a></h2>
+                    <div class="swiper-slide">
+                        <article>
+                            <figure class="overlay overlay-1 hover-scale group rounded !mb-5"><a href="#"> <img
+                                    class="!transition-all !duration-[0.35s] !ease-in-out group-hover:scale-105"
+                                    src="{{ article.image.url }}" alt="{{ article.title }}"></a>
+                                <figcaption
+                                        class="group-hover:opacity-100 absolute w-full h-full opacity-0 text-center px-4 py-3 inset-0 z-[5] pointer-events-none p-2">
+                                    <h5 class="from-top  !mb-0 absolute w-full translate-y-[-80%] p-[.75rem_1rem] left-0 top-2/4">
+                                        Batafsil o'qish</h5>
+                                </figcaption>
+                            </figure>
+                            <div class="post-header">
+                                <div class="inline-flex mb-[.4rem] uppercase tracking-[0.02rem] text-[0.7rem] font-bold text-[#aab0bc] relative align-top pl-[1.4rem] before:content-[''] before:absolute before:inline-block before:translate-y-[-60%] before:w-3 before:h-[0.05rem] before:left-0 before:top-2/4 before:bg-[#3f78e0]">
+                                    <a class="hover" rel="category">{{ article.category.title }}</a>
                                 </div>
-                                <!-- /.post-header -->
-                                <div class="post-footer">
-                                    <ul class="text-[0.7rem] text-[#aab0bc] m-0 p-0 list-none  !mb-0">
-                                        <li class="post-date inline-block"><i
-                                                class="uil uil-calendar-alt pr-[0.2rem] align-[-.05rem] before:content-['\e9ba']"></i><span>{{ article.created_at }}</span>
-                                        </li>
-                                    </ul>
-                                    <!-- /.post-meta -->
-                                </div>
-                                <!-- /.post-footer -->
-                            </article>
-                            <!-- /article -->
-                        </div>
-                        <!--/.swiper-slide -->
+                                <!-- /.post-category -->
+                                <h2 class="post-title h3 !mt-1 !mb-3"><a class="text-[#343f52] hover:text-[#3f78e0]"
+                                                                         href="#">{{ article.title }}</a></h2>
+                            </div>
+                            <!-- /.post-header -->
+                            <div class="post-footer">
+                                <ul class="text-[0.7rem] text-[#aab0bc] m-0 p-0 list-none  !mb-0">
+                                    <li class="post-date inline-block"><i
+                                            class="uil uil-calendar-alt pr-[0.2rem] align-[-.05rem] before:content-['\e9ba']"></i><span>{{ article.created_at }}</span>
+                                    </li>
+                                </ul>
+                                <!-- /.post-meta -->
+                            </div>
+                            <!-- /.post-footer -->
+                        </article>
+                        <!-- /article -->
+                    </div>
+                    <!--/.swiper-slide -->
                     {% endfor %}
                 </div>
                 <!--/.swiper-wrapper -->
@@ -130,95 +132,26 @@
             {% endif %}
         </div>
         <!--/.row -->
-        <div class="card !bg-[#f6f3f9] mb-10">
-            <div class="card-body p-14 pb-0">
-                <div class="flex flex-wrap mx-[-15px]">
-                    <div class="xl:w-4/12 lg:w-4/12 w-full flex-[0_0_auto] px-[15px] max-w-full pb-14 self-center">
-                        <div class="uppercase tracking-[0.02rem] text-[0.7rem] font-bold mb-3 text-[#a07cc5]">Web
-                            Design
-                        </div>
-                        <h3 class="h1 post-title !mb-3 !leading-[1.3]">Snowlake Theme</h3>
-                        <p>Maecenas faucibus mollis interdum sed posuere consectetur est at lobortis. Scelerisque id
-                            ligula porta felis euismod semper. Fusce dapibus tellus cursus.</p>
-                        <a href="#" class="more hover text-[#a07cc5] focus:text-[#a07cc5] hover:text-[#a07cc5]">See
-                            Project</a>
-                    </div>
-                    <!-- /column -->
-                    <div class="xl:w-7/12 xl:!ml-[8.33333333%] lg:w-7/12 lg:!ml-[8.33333333%] w-full flex-[0_0_auto] px-[15px] max-w-full !self-end">
-                        <figure class="m-0 p-0"><img class="max-w-full h-auto" src="../static/images/f1.png"
-                                                     srcset="../static/images/f1%402x.png 2x" alt="image"></figure>
-                    </div>
-                    <!-- /column -->
-                </div>
-                <!-- /.row -->
-            </div>
-            <!--/.card-body -->
-        </div>
-        <!--/.card -->
-        <div class="card !bg-[#edf2fc] mb-10">
-            <div class="card-body p-14">
-                <div class="flex flex-wrap mx-[-15px] mt-[-50px] items-center">
-                    <div class="xl:w-4/12 lg:w-4/12 w-full flex-[0_0_auto] px-[15px] max-w-full xl:!order-2 xl:!ml-[8.33333333%] lg:!order-2 lg:!ml-[8.33333333%] mt-[50px]">
-                        <div class="uppercase tracking-[0.02rem] text-[0.7rem] font-bold mb-3 text-[#3f78e0]">Mobile
-                            Design
-                        </div>
-                        <h3 class="h1 post-title !mb-3 !leading-[1.3]">Budget App</h3>
-                        <p>Maecenas faucibus mollis interdum sed posuere consectetur est at lobortis. Scelerisque id
-                            ligula porta felis euismod semper. Fusce dapibus tellus cursus.</p>
-                        <a href="#" class="more hover text-[#3f78e0] focus:text-[#3f78e0] hover:text-[#3f78e0]">See
-                            Project</a>
-                    </div>
-                    <!-- /column -->
-                    <div class="xl:w-7/12 lg:w-7/12 w-full flex-[0_0_auto] px-[15px] max-w-full mt-[50px]">
-                        <figure class="m-0 p-0"><img class="max-w-full h-auto" src="../static/images/f2.png"
-                                                     srcset="../static/images/f2%402x.png 2x" alt="image"></figure>
-                    </div>
-                    <!-- /column -->
-                </div>
-                <!-- /.row -->
-            </div>
-            <!--/.card-body -->
-        </div>
-        <!--/.card -->
         <div class="flex flex-wrap mx-[-15px] md:mx-[-20px] xl:mx-[-25px]">
+            {% for category in course_categories %}
             <div class="xl:w-6/12 lg:w-6/12 w-full flex-[0_0_auto] xl:px-[25px] lg:px-[20px] md:px-[20px] px-[15px] max-w-full">
-                <div class="card !bg-[#f3f8f5] mb-10 lg:!mb-0">
+                <div class="card !bg-[{{ category.bg_color }}] mb-10 lg:!mb-0">
                     <div class="card-body p-14 pb-0">
-                        <div class="uppercase tracking-[0.02rem] text-[0.7rem] font-bold mb-3 text-[#7cb798]">Web
-                            Design
+                        <div class="uppercase tracking-[0.02rem] text-[0.7rem] font-bold mb-3">
+                            {{ category.cap_title }}
                         </div>
-                        <h3 class="h1 post-title !mb-3 !leading-[1.3]">Missio Theme</h3>
-                        <p>Maecenas faucibus mollis interdum sed posuere porta consectetur cursus porta lobortis.
-                            Scelerisque id ligula felis.</p>
-                        <a href="#" class="more hover link-leaf !mb-8">See Project</a>
+                        <h3 class="h1 post-title !mb-3 !leading-[1.3]">{{ category.title }}</h3>
+                        <p>{{ category.description }}</p>
+                        <a href="{{ category.get_absolute_url }}" class="more hover link-leaf !mb-8">Barchasini ko'rish</a>
                     </div>
                     <!--/.card-body -->
-                    <img class="card-img-bottom" src="../static/images/f3.png" srcset="../static/images/f3%402x.png 2x"
-                         alt="image">
+                    <img class="card-img-bottom" src="{{ category.image.url }}" alt="image">
                 </div>
                 <!--/.card -->
             </div>
             <!-- /column -->
-            <div class="xl:w-6/12 lg:w-6/12 w-full flex-[0_0_auto] xl:px-[25px] lg:px-[20px] md:px-[20px] px-[15px] max-w-full">
-                <div class="card !bg-[#fbf1f4] xl:!mb-0 lg:!mb-0">
-                    <div class="card-body p-14 pb-0">
-                        <div class="uppercase tracking-[0.02rem] text-[0.7rem] font-bold mb-3 text-[#d16b86]">Mobile
-                            Design
-                        </div>
-                        <h3 class="h1 post-title !mb-3 !leading-[1.3]">Storage App</h3>
-                        <p>Maecenas faucibus mollis interdum sed posuere consectetur est at lobortis. Scelerisque id
-                            ligula porta felis euismod semper.</p>
-                        <a href="#" class="more hover link-pink !mb-8">See Project</a>
-                    </div>
-                    <!--/.card-body -->
-                    <img class="card-img-bottom" src="../static/images/f4.png" srcset="../static/images/f4%402x.png 2x"
-                         alt="image">
-                </div>
-                <!--/.card -->
-            </div>
-            <!-- /column -->
+            {% endfor %}
         </div>
-        <!-- /.row -->
     </div>
     <!-- /.container -->
 </section>
